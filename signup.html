@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2</title>
+
+    <style>
+
+        *{
+            font-family: cursive;
+        }
+
+        body{
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            min-height: 100vh;
+            background-color: black;
+            color: white;
+            
+        }
+
+        div{
+            border: 3px solid black;
+            width: 275px;
+            height: 100%;
+            background-color: black;
+            border-radius: 20px;
+            position: relative;
+            flex-direction: column;
+            display: flex;
+            
+  
+        }
+
+        @keyframes mama{
+            from{
+                opacity: 0;
+                transform: translateY(0);
+            }
+
+            to{
+                opacity: 1;
+                transform: translateY(-20%);
+            }
+        }
+
+        h1{
+            
+            text-align: center;
+            animation: mama 3s forwards;
+        }
+
+       div button{
+            width: 5em;
+            position: relative;
+            padding: 5px;
+            border-radius: 10px;
+            border: none;
+            background: transparent;
+            color: whitesmoke;
+            z-index: 0;
+            overflow: hidden;
+            transition: 3.5s;
+            
+
+        }
+
+       div input{
+            border-radius: 10px;
+            padding: 10px;
+            border: none;
+            background: transparent;
+            color: white;
+            transition-duration: 0.3s;
+            transition-property: all;
+            animation: mak 8.5s forwards;
+            
+
+        }
+
+        @keyframes mak{
+            from{
+                opacity: 0;
+                transform: translateY(0);
+            }
+
+            to{
+                opacity: 1;
+                transform: translateY(-30%);
+            }
+        }
+
+        input:focus{
+            
+            transform: scale(1.01);
+            box-shadow: 0 0 20px pink;
+        }
+
+       div label{
+            margin-left: 10px;
+            display: flex;
+            animation: junjun 7.5s forwards;
+        }
+
+        @keyframes junjun{
+            from{
+                opacity: 0;
+                transform: translateY(0);
+            }
+
+            to{
+                opacity: 1;
+                transform: translateY(-30%);
+            }
+        }
+
+        @property --angle{
+            syntax: "<angle>" ;
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+
+        div::after, div::before{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            background: conic-gradient(from var(--angle),transparent 70%, blue, pink , orange,yellow,yellowgreen);
+            padding: 7px;
+            top: -7px;
+            left: -7px;
+            z-index: -1;
+            animation: spin 3s infinite;
+            
+
+        }
+
+        div::before{
+            filter: blur(20px);
+            
+        }
+
+        @keyframes spin{
+            from{
+                --angle:0deg;
+            }
+
+            to{
+                --angle:360deg;
+            }
+        }
+
+        div button::after{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(120deg, blue, pink, orange,yellow,yellowgreen);
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        transition: width 0.7s ease-in-out;
+        z-index: -1;
+       }
+
+      
+
+     div  button:hover::after{
+        width: 100%;
+        
+       }
+
+      div button:hover{
+        
+        box-shadow: 0 0 20px blue;
+        z-index: 1;
+       }
+
+      div img{
+        width: 50px;
+        border-radius: 50%;
+        
+       }
+
+       div pre{
+        animation: mok 10.5s forwards;
+       }
+
+       @keyframes mok{
+            from{
+                opacity: 0;
+                transform: translateY(0);
+            }
+
+            to{
+                opacity: 1;
+                transform: translateY(-30%);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        
+        <h1>Sign up</h1>
+        
+        <label for="">Username:</label>
+        <br>
+        <input type="text" id="username" placeholder="Enter your username" required>
+        <br>
+        <br>
+        <label for="">Password:</label>
+        <br>
+        <input type="password" id="password" placeholder="Enter your password" required>
+          <pre>     Remember Me?</pre>
+        <br>
+       
+        <input type="checkbox" style="position:absolute; left: 0; top: 24em;">
+        <center>
+        <button type="submit">login</button>
+        <br>
+        <br>
+        or
+        <br>
+        <img src="google.png" alt="" style="border-radius: 50%; width: 43px; margin-bottom: 3px;" onclick="junjan()">
+        <img src="facebook.webp" alt="" onclick="junjun()">
+        </center>
+
+    </div>
+</body>
+
+<script>
+
+    function junjun(){
+        window.location.href="fb.com"
+    }
+
+    function junjan(){
+        window.location.href="google.com"
+
+    }
+    </script>
+</html>

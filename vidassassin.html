@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        .bg {
+            background: linear-gradient(rgba(65, 9, 117, 0.356)), url(sawako.png);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            z-index: -1;
+            filter: blur(3px);
+
+
+
+        }
+
+        .bordertop {
+            background-color: rgb(57, 12, 99);
+            width: 100%;
+            padding: 5px;
+            position: fixed;
+
+
+        }
+
+        header {
+            font-size: 40px;
+            margin-left: 50px;
+            padding: 25px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+
+
+
+        }
+
+        header::before {
+            content: 'Mr.';
+            background-color: pink;
+            color: white;
+            border-radius: 10px;
+            padding: 5px;
+
+
+        }
+
+        header::after {
+            content: 'Anime';
+            background-color: blueviolet;
+            border-radius: 10px;
+            margin-left: 5px;
+            padding: 5px;
+            color: white;
+        }
+
+        nav {
+            padding: 5px;
+            position: fixed;
+            left: 21em;
+            top: 2.4em;
+
+
+        }
+
+        a {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-right: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            color: blueviolet;
+            position: relative;
+            display: inline-flex;
+
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            display: block;
+            background: linear-gradient(to right, violet, rgb(57, 12, 99));
+            width: 0%;
+            height: 10%;
+            transition: width 1s;
+            left: 0;
+            bottom: 0;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        svg {
+            position: fixed;
+            width: 2.8em;
+            color: blueviolet;
+            right: 1em;
+            top: 2em;
+            border-radius: 100%;
+
+        }
+
+        svg:active {
+
+            color: black;
+
+        }
+
+        .main1 {
+            position: fixed;
+            top: 7em;
+            background-color: blueviolet;
+            width: 10%;
+            height: 110px;
+            right: 0;
+            display: none;
+            border-radius: 10px;
+            z-index: 1000;
+
+        }
+
+        .btn button {
+            font-size: 20px;
+            display: flex;
+            color: white;
+            background: transparent;
+            border: none;
+            position: relative;
+            left: 1.3em;
+            top: 1em;
+
+
+        }
+
+        .btn button:hover {
+            background-color: blue;
+        }
+
+        .container {
+            position: absolute;
+            top: 120px;
+            left: 1em;
+            z-index: -1;
+        }
+
+        .content {
+            display: flex;
+            gap: 20px;
+            padding: 140px;
+        }   
+        
+        .video video {
+            width: 800px;
+            height: 450px;
+            
+        }
+        
+        .Episode {
+            width: 280px;
+        }
+
+        .epgrid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+
+        .ep {
+            background-color: violet;
+            border-radius: 15px;
+            width: 50px;
+            cursor: pointer;
+        }
+
+        .ep:hover {
+            transform: scale(1.05);
+        }
+
+        p {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bordertop">
+        <header></header>
+    </div>
+
+    <div>
+        <nav>
+            <a href="animesite.html">Home</a>
+            <a href="#jun1"># A-z</a>
+            <a href="#jun2">Genre</a>
+        </nav>
+    </div>
+    <svg onclick="junjun()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+        stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+
+    <div class="bg"></div>
+
+    <div id="main" class="main1">
+        <div class="btn">
+            <button>Settings</button>
+            <br>
+
+            <button onclick="window.location.href='signup.html'">Sign up</button>
+        </div>
+    </div>
+
+
+
+    <div class="content">
+
+
+        <div class="video">
+            <video style="z-index: 0;" controls id="vid" width="800" height="450">
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+
+
+
+        <div class="Episode">
+
+            <h2 style="color: white;">Episodes:</h2>
+
+            <div class="epgrid">
+
+
+                <div class="ep" onclick="play('11pjHbuEDVIxD0X4VEbJ6A0kyTbW5191r')">
+                    <p>1</p>
+
+                </div>
+
+                <div class="ep" onclick="play('../build1/vid assassin/ep2.mp4')">
+                    <p>2</p>
+
+                </div>
+
+                <div class="ep" onclick="play('../build1/vid assassin/ep3.mp4')">
+                    <p>3</p>
+
+                </div>
+
+                <div class="ep" onclick="play('../build1/vid assassin/ep4.mp4')">
+                    <p>4</p>
+
+                </div>
+
+                <div class="ep" onclick="play('../build1/vid assassin/ep5.mp4')">
+                    <p>5</p>
+
+                </div>
+
+                <div class="ep" onclick="play('../build1/vid assassin/ep6.mp4')">
+                    <p>6</p>
+
+                </div>
+
+
+                <div class="ep" onclick="play('../build1/vid assassin/ep7.mp4')">
+                    <p>7</p>
+
+                </div>
+
+                <div class="ep" onclick="play('../build1/vid assassin/ep8.mp4')">
+                    <p>8</p>
+
+                </div>
+
+                <div class="ep" onclick="play('../build1/vid assassin/ep9.mp4')">
+                    <p>9</p>
+
+                </div>
+
+                <div class="ep" onclick="play('../build1/vid assassin/ep10.mp4')">
+                    <p>10</p>
+
+                </div>
+
+                <div class="ep" onclick="play('../build1/vid assassin/ep11.mp4')">
+                    <p>11</p>
+
+                </div>
+
+                <div class="ep" onclick="play('../build1/vid assassin/ep12.mp4')">
+                    <p>12</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function junjun() {
+
+        var div = document.getElementById("main");
+
+        if (div.style.display === "none") {
+            div.style.display = "block";
+        } else {
+            div.style.display = "none";
+        }
+
+    }
+
+    const player = document.getElementById('vid');
+
+    function play(fileId) {
+      const url = `https://drive.google.com/uc?export=download&id=${fileId}`;
+      player.src = url;
+      player.load();  // important to reload the video
+      player.play();
+    }
+
+    // Auto-play first episode on page load
+    window.onload = () => {
+      play('11pjHbuEDVIxD0X4VEbJ6A0kyTbW5191r');
+    }
+
+</script>
+
+</html>

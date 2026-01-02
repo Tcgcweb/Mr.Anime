@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            margin: 0;
+           box-sizing: border-box;
+           overflow-x: hidden;
+           
+            
+        }
+
+        .bg{
+            background: linear-gradient(rgba(65, 9, 117, 0.356)),url(sawako.png);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            z-index: -1;
+            filter: blur(3px);
+          
+
+            
+        }
+
+        .bordertop{
+            background-color: rgb(57, 12, 99);
+            width: 100%;
+            padding: 5px;
+            position: fixed;
+            
+            
+        }
+
+        header{
+            font-size: 40px;
+            margin-left: 50px;
+            padding: 25px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            
+
+            
+        }
+
+        header::before{
+            content: 'Mr.';
+            background-color: pink;
+            color: white;
+            border-radius: 10px;
+            padding: 5px;
+            
+
+        }
+
+        header::after{
+            content: 'Anime';
+            background-color: blueviolet ;
+            border-radius: 10px;
+            margin-left: 5px;
+            padding: 5px;
+            color: white;
+        }
+
+        nav{
+         padding: 5px;   
+         position: fixed;
+         left: 21em;
+         top: 2.4em;
+         
+         
+        }
+
+        a{
+          font-family: Arial, Helvetica, sans-serif;
+          margin-right: 15px;
+          font-size: 20px; 
+          text-decoration: none;
+          color: blueviolet;
+          position: relative;
+          display: inline-flex;
+
+        }
+
+        a::after{
+            content: '';
+            position: absolute;
+            display: block;
+            background:linear-gradient(to right, violet, rgb(57, 12, 99));
+            width: 0%;
+            height: 10%;
+            transition: width 1s;
+            left: 0;
+            bottom: 0;
+        }
+
+        a:hover::after{
+            width: 100%;
+        }
+
+        svg{
+            position: fixed;
+            width: 2.8em;
+            color: blueviolet;
+            right: 1em;
+            top: 2em;
+            border-radius: 100%;
+            
+        }
+
+        svg:active{
+            
+            color: black;
+            
+        }
+
+        .main1{
+            position: fixed;
+            top: 7em;
+            background-color: blueviolet;
+            width: 10%;
+            height: 110px;
+            right: 0;
+            display: none;
+            border-radius: 10px;
+            z-index: 1000;
+
+        }
+
+        .btn button{
+            font-size: 20px;
+            display: flex;
+            color: white;
+            background: transparent;
+            border: none;
+            position: relative;
+            left: 1.3em;
+            top: 1em;
+            
+
+        }
+
+        .btn button:hover{
+            background-color: blue;
+        }
+
+        .container{
+            padding: 25px;
+             position: absolute;
+             top: 120px;
+             z-index: -1;
+             height: auto;
+             
+             
+             
+        }
+
+        .grid{
+            display: grid;
+            gap: 28px;
+            display: flex ;
+             flex-wrap: wrap;
+            
+            
+            
+            
+
+        }
+
+        .animecard{
+        
+            background: linear-gradient(to bottom, pink, blueviolet);
+            max-width: 300px;
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.5s ease ;
+
+            
+        }
+
+        .animecard:hover{
+            transform: scale(1.05)
+            
+        }
+
+        .animecard img{
+            
+            width: 100%;
+            height: 260px;
+            border-radius: 10px;
+        }
+
+       .animecard p{
+            color: violet;
+            font-weight: 600;
+            text-align: center;
+            font-size: large;
+        }
+
+        .animecard span{
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            position: relative;
+            bottom: 0.5em;
+            left: 0.5em;
+        }
+
+       .container2{
+            padding: 25px;
+             position: absolute;
+             top: 35em;
+             z-index: -1;
+             height: auto;
+       }
+
+       .container3{
+            padding: 25px;
+             position: absolute;
+             top: 57.5em;
+             z-index: -1;
+             height: auto;
+       }
+
+       
+    </style>
+</head>
+<body>
+
+    <div class="bordertop">
+        <header></header>
+    </div>
+
+    <div>
+       <nav>
+            <a href="animesite.html">Home</a>
+            <a href="#jun1"># A-z</a>
+            <a href="#jun2">Genre</a>
+        </nav>
+        </div>
+        <svg onclick="junjun()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+</svg>
+
+    <div class="bg"></div>
+
+     <div id="main" class="main1">
+        <div class="btn">
+            <button>Settings</button>
+            <br>
+            
+            <button onclick="window.location.href='signup.html'">Sign up</button> 
+            </div>           
+        </div>
+        
+        <div class="container">
+            <h1 style="color: white;">All finished anime:</h1>
+            <div class="grid">
+
+
+        <div class="animecard">
+            <img src="The-Promised-Neverland-Vol.-5.png" alt="" >
+            <p> The Promise Neverland Season 1 </p>
+            <span>12 Episode</span>
+
+        </div>
+
+        <div class="animecard">
+            <img src="attack on titan.jpg" alt="">
+            <p> Attack on titan Season 1</p>
+            <span>25 Episode</span>
+
+        </div>
+
+        <div class="animecard">
+            <img src="kimi no todoke.jfif" alt="">
+            <p> Kimi ni todoke Season 1</p>
+            <span>25 Episode</span>
+
+        </div>
+
+        <div class="animecard">
+
+        </div>
+    
+        <div class="animecard">
+
+        </div>
+
+         <div class="animecard">
+            <img src="kimi no todoke s4.jfif" alt="">
+            <p> Kimi ni todoke Season 3</p>
+            <span>6 Episodes</span>
+
+        </div>
+
+        <div class="animecard">
+
+        </div>
+
+        <div class="animecard">
+
+        </div>
+
+        <div class="animecard">
+
+        </div>
+    
+        <div class="animecard">
+
+        </div>
+
+         <div class="animecard" onclick="window.location.href='vidassassin.html' ">
+            <img src="assassin.jfif" alt="">
+            <p> My Status as an Assassin Obviously Exceeds the Hero's </p>
+            <span>12 Episodes</span>
+
+        </div>
+
+        <div class="animecard">
+            <img src="" alt="">
+
+        </div>
+
+         <div class="animecard">
+            <img src="attack on titan.jpg" alt="">
+            <p></p>
+            <span></span>
+
+        </div>
+         <div class="animecard">
+
+        </div>
+         <div class="animecard">
+
+        </div>
+         <div class="animecard">
+
+        </div>
+
+        </div>
+
+        </div>
+</body>
+
+<script>
+    function junjun(){
+        
+  let div = document.getElementById("main");
+
+  if (div.style.display === "none") {
+    div.style.display = "block";
+  } else {
+    div.style.display = "none";
+  }
+
+    }
+
+    
+</script>
+</html>

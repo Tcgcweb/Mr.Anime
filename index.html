@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .btn{
+            border-radius: 100px;
+            font-size: 50px;
+            padding: 20px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+            transition: 2.3s;
+
+        }
+
+        .btn::after, .btn::before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, yellow, orange);
+            left: 0;
+            top: 0;
+            border-radius: 100px;
+            transition: width 1s ease-in-out;
+            z-index: -1;
+        }
+
+        .btn:hover{
+            transform: scale(1.08);
+            box-shadow: 0 0 20px yellow;
+
+        }
+
+        .btn::before{
+            filter:blur(20px);
+            opacity: 3;
+            
+        }
+
+        .btn:hover::after{
+            width: 100%;  
+        }
+
+       
+
+    </style>
+</head>
+
+<body>
+    <a href="animesite.html"><button class="btn">Click Here!!</button></a>
+</body>
+</html>
